@@ -1,13 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { HomePage } from './HomePage.js';
+import { HomePage } from './components/HomePage/HomePage.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
         </p>
         <a
