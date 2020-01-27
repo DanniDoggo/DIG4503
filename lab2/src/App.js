@@ -1,23 +1,11 @@
 import React from 'react';
-import { HomePage } from './components/HomePage/HomePage.js';
+import HomePage from './components/HomePage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  render(){
+    return(<HomePage firstName="Danielle"/>);
+  }
 }
 
 export default App;
