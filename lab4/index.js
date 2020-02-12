@@ -3,31 +3,53 @@ const App = Express();
 const port = 80;
 
 const pokemons = require('json-pokemon');
-const pokemon = pokemons[];
 
 const chalk = require("chalk");
 
 App.get("/id/:id", (req, res) => {
-  pokemon.forEach((value)=>{
+
+let result = {"error": "Error message"};
+
+  pokemons.forEach((value)=>{
     if(value.id == req.params.id){
-      res.send(value);
-      console.log(chalk.green(value));
+      result = value;
     }
   });
-  res.send("Error, it's not very effective...");
-  console.log(chalk.red("Error, it's not very effective..."));
+
+if(result.error){
+console.log(chalk.red(req.path));
+
+}
+ else {
+  console.log(chalk.green(req.path));
+ }
+
+  res.send(result);
+
 });
 
 App.get("/name/:name", (req, res) => {
-  pokemon.forEach((value)=> {
-     if(value.name == req.params.name) {
-         res.send(value);
-         console.log(chalk.green(value));
-     }
- });
- res.send("Error, it's not very effective...");
- console.log(chalk.red("Error, it's not very effective..."));
+
+let result = {"error": "Error message"};
+
+  pokemons.forEach((value)=>{
+    if(value.name == req.params.name){
+      result = value;
+    }
+  });
+
+if(result.error){
+console.log(chalk.red(req.path));
+
+}
+ else {
+  console.log(chalk.green(req.path));
+ }
+
+  res.send(result);
+
 });
+
 
 
 App.listen(port,() => {
