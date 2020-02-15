@@ -50,8 +50,6 @@ console.log(chalk.red(req.path));
 
 });
 
-
-
 App.listen(port,() => {
   console.log("Server is running the very best, like no one ever was");
 });
