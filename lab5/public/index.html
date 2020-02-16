@@ -5,9 +5,9 @@
       function readID(event) {
         event.preventDefault();
 
-        let element = document.querySelector("#id");
+        let element = document.querySelector("#ID");
 
-        fetch("/id/:id" + element.value)
+        fetch("/id/" + element.value)
 
             .then((res) => {
                   return res.json();
@@ -29,9 +29,9 @@
         function readNAME(event) {
           event.preventDefault();
 
-          let element = document.querySelector("#name");
+          let element = document.querySelector("#NAME");
 
-          fetch("/name/:name" + element.value)
+          fetch("/name/" + element.value)
 
             .then((res) => {
                   return res.json();
@@ -53,12 +53,12 @@
 
     <h2>Pokemon ID Number</h2>
         <form onsubmit="readID(event)">
-            <input id="id" type="text">
+            <input id="ID" type="text">
             <button>Submit</button>
         </form>
         <h2>Pokemon Name</h2>
         <form onsubmit="readNAME(event)">
-            <input id="name" type="text">
+            <input id="NAME" type="text">
             <button>Submit</button>
         </form>
         <hr>

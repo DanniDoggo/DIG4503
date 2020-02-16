@@ -6,10 +6,6 @@ const pokemons = require('json-pokemon');
 
 const chalk = require("chalk");
 
-//const fs = require("fs");
-//let fileContents = fs.readFileSync("database.json");
-//let database = JSON.parse(fileContents);
-
 App.use("/", Express.static("public"));
 
 App.get("/id/:id", (req, res) => {
