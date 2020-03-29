@@ -1,6 +1,8 @@
-import React from "react";
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from '../components/Id/Id.module.css';
 
-class IdSearch extends React.Component {
+class Id extends React.Component {
 
     getId() {
 
@@ -28,13 +30,24 @@ class IdSearch extends React.Component {
 
     render() {
         return(
-            <div>
+            
+            <div className = {styles.bg}>
+                <Head>ID Search</Head>
+                <p className = {styles.namestyle}>ID No. Search</p>
                  <input type="text" id="idInput" />
-                 <button onClick={() => { this.getId() } }>Throw a Pokeball!</button>
+                 <button className = {styles.button} onClick={() => { this.getId() } }>Throw a Pokeball!</button>
                  <div id="results"></div>
+
+                 <p>
+                <img src="https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849__340.png" alt="Pokeball"></img>
+                </p>
+
+                 <Link href="/index">
+                    <a className = {styles.link}> Return to Home</a>
+                </Link>
             </div>
         );
     }
 }
 
-export default IdSearch;
+export default Id;

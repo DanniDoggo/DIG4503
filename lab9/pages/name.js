@@ -1,6 +1,8 @@
-import React from "react";
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from '../components/Name/Name.module.css';
 
-class NameSearch extends React.Component {
+class Name extends React.Component {
 
     getName() {
 
@@ -27,14 +29,26 @@ class NameSearch extends React.Component {
                   }
 
     render() {
+
         return(
-            <div>
+            
+            <div className = {styles.bg}>
+                <Head>Name Search</Head>
+                <p className = {styles.namestyle}>Name Search</p>
                  <input type="text" id="nameInput" />
-                 <button onClick={() => { this.getName() } }>Throw a Pokeball!</button>
+                 <button className = {styles.button} onClick={() => { this.getName() } }>Throw a Pokeball!</button>
                  <div id="results"></div>
+
+                 <p>
+                <img src="https://cdn.pixabay.com/photo/2016/07/23/13/18/pokemon-1536849__340.png" alt="Pokeball"></img>
+                </p>
+
+                 <Link href="/index">
+                    <a className = {styles.link}> Return to Home</a>
+                </Link>
             </div>
         );
     }
 }
 
-export default NameSearch;
+export default Name;
